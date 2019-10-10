@@ -36,7 +36,7 @@ model
 
 library(lavaan)
 fit_model <- sem(model=model, data=data1, se='bootstrap', bootstrap=3000)
-summary(fit_model)
+summary(fit_model, standardized=TRUE, ci=TRUE, rsquare=TRUE, estimates=TRUE)
 
 library(semPlot)
 semPaths(fit_model, what='std')
