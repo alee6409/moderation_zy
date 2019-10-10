@@ -12,6 +12,7 @@ summary(fit)
 
 
 #plot
+#install.packages("rockchalk")
 library(rockchalk)
 plotSlopes(fit, plotx="close.trust", modx="all")
 
@@ -34,6 +35,7 @@ head(data1)
 model <- readLines('model.txt')
 model
 
+#install.packages("lavaan")
 library(lavaan)
 fit_model <- sem(model=model, data=data1, se='bootstrap', bootstrap=3000)
 summary(fit_model, standardized=TRUE, ci=TRUE, rsquare=TRUE, estimates=TRUE)
