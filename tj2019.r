@@ -21,3 +21,22 @@ plotSlopes(fit, plotx="close.trust", modx="all")
 fit_all <- lm(lhs ~ all + close.trust + all*close.trust)
 summary(fit_all)
 plotSlopes(fit_all, plotx="close.trust", modx="all")
+
+
+
+
+#lavaan
+data1 <- read.csv('bs_data_analysis2.csv')
+inter1 <- data1$all2 * data1$close.trust2
+data1 <- data.frame(data1$all2, data1$close.trust2, data1$lhs2, inter)
+head(data1)
+
+model <- readLines('model.txt')
+model
+
+library(lavaan)
+fit_model <- sem(model=model, data=data1, se='bootstrap', bootstrap=3000)
+summary(fit_model)
+
+library(semPlot)
+semPaths(fit_model, what='std')
