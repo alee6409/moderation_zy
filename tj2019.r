@@ -11,7 +11,7 @@ fit <- lm(lhs ~ close.trust*all)
 summary(fit)
 
 
-#plot
+#plots                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 #install.packages("rockchalk")
 library(rockchalk)
 plotSlopes(fit, plotx="close.trust", modx="all")
