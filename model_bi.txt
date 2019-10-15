@@ -1,0 +1,2 @@
+data1.lhs2 ~ a*data1.gender2 + b*data1.close.trust2 + c*inter
+moder := c
